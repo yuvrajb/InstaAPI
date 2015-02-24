@@ -9,6 +9,11 @@ The API may contain some bugs; feel free to raise issues regarding the same. You
 	<li>twitter: <b>@yuvrajb</b></li>
 </ul>
 Yuvraj Singh Babrah, 2015
+# Requirements
+<ul>
+	<li>DotNet Framework 4 or above</li>
+	<li>Newtonsoft json library</li>
+</ul>
 # Quick Walkthrough
 	Refer the following quick-guide for using the API
   - <b>Creating InstaConfig Object</b> (to be used for both authenticated and unauthenticated requests)
