@@ -9,6 +9,10 @@ namespace InstaAPI.Entities
     public class AuthUser
     {
         /// <summary>
+        ///     <para>gets or sets the response metadata</para>
+        /// </summary>
+        public MetaData Meta;
+        /// <summary>
         ///     <para>gets or sets the authorised access token</para>
         /// </summary>
         public String AccessToken;

@@ -20,6 +20,7 @@ namespace InstaAPI.Auth
         private String Code;
         private String AccessTokenUri = "api.instagram.com/oauth/access_token";
         private AuthUser AuthorisedUser = null;
+        private MetaData Meta = null;
 
         /*************************************************************** CONSTRUCTORS ****************************************************************/
 
@@ -60,6 +61,12 @@ namespace InstaAPI.Auth
                 AuthenticationTokenRequestUri.Scheme = this.Config.GetUriScheme();
                 AuthenticationTokenRequestUri.Host = this.AccessTokenUri;
 
+                // STORE VALUES IN AUTHUSER
+                AuthorisedUser = new AuthUser();
+
+                // CREATE NEW META OBJECT AND FILL IN DATA
+                Meta = new MetaData();
+
                 // SEND POST REQUEST
                 byte[] ResponseBytes = Client.UploadValues(AuthenticationTokenRequestUri.Uri, PostStrings);
                 String Response = Encoding.UTF8.GetString(ResponseBytes);
@@ -67,9 +74,8 @@ namespace InstaAPI.Auth
                 // PARSE JSON
                 dynamic ParsedJson = JsonConvert.DeserializeObject(Response);
 
-                // STORE VALUES IN AUTHUSER
-                AuthorisedUser = new AuthUser();
-
+                Meta.Code = 200;
+                AuthorisedUser.Meta = Meta;
                 AuthorisedUser.AccessToken = ParsedJson.access_token;
                 AuthorisedUser.UserId = ParsedJson.user.id;
                 AuthorisedUser.UserName = ParsedJson.user.username;
@@ -91,9 +97,10 @@ namespace InstaAPI.Auth
                         dynamic ParsedJson = JsonConvert.DeserializeObject(ResponseReader.ReadToEnd());
 
                         // CREATE NEW META OBJECT AND FILL IN DATA
-                        Console.WriteLine(ParsedJson.code);
-                        Console.WriteLine(ParsedJson.error_type);
-                        Console.WriteLine(ParsedJson.error_message);
+                        Meta.Code = ParsedJson.code;
+                        Meta.ErrorType = ParsedJson.error_type;
+                        Meta.ErrorMessage = ParsedJson.error_message;
+                        AuthorisedUser.Meta = Meta;
                     }
                 }
             }
