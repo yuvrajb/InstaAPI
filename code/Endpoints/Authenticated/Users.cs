@@ -164,7 +164,7 @@ namespace InstaAPI.Endpoints.Authenticated
                 // CREATE PAGINATION OBJECT
                 PaginationIdData Pagination = new PaginationIdData();
                 Pagination.NextUrl = ParsedJson.pagination.next_url;
-                Pagination.NextMaxId = ParsedJson.pagination.nex_max_id;
+                Pagination.NextMaxId = ParsedJson.pagination.next_max_id;
                 UserFeeds.Pagination = Pagination;
 
                 // SET FEEDS DATA
@@ -251,7 +251,7 @@ namespace InstaAPI.Endpoints.Authenticated
                 // CREATE PAGINATION OBJECT
                 PaginationIdData Pagination = new PaginationIdData();
                 Pagination.NextUrl = ParsedJson.pagination.next_url;
-                Pagination.NextMaxId = ParsedJson.pagination.nex_max_id;
+                Pagination.NextMaxId = ParsedJson.pagination.next_max_id;
                 UserPosts.Pagination = Pagination;
 
                 // SET FEEDS DATA
@@ -335,7 +335,7 @@ namespace InstaAPI.Endpoints.Authenticated
                 // CREATE PAGINATION OBJECT
                 PaginationIdData Pagination = new PaginationIdData();
                 Pagination.NextUrl = ParsedJson.pagination.next_url;
-                Pagination.NextMaxId = ParsedJson.pagination.nex_max_id;
+                Pagination.NextMaxId = ParsedJson.pagination.next_max_id;
                 UserLikes.Pagination = Pagination;
 
                 // SET FEEDS DATA
