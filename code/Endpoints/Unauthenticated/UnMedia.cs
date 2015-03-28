@@ -356,9 +356,9 @@ namespace InstaAPI.Endpoints.Unauthenticated
             else
             {
                 AttributionData Attribution = new AttributionData();
-                Attribution.Website = Post.Attribution.website;
-                Attribution.ItunesUrl = Post.Attribution.itunes_url;
-                Attribution.Name = Post.Attribution.name;
+                Attribution.Website = Post.attribution.website;
+                Attribution.ItunesUrl = Post.attribution.itunes_url;
+                Attribution.Name = Post.attribution.name;
                 Feed.Attribution = Attribution;
             }
 
@@ -574,9 +574,9 @@ namespace InstaAPI.Endpoints.Unauthenticated
                 else
                 {
                     AttributionData Attribution = new AttributionData();
-                    Attribution.Website = Post.Attribution.website;
-                    Attribution.ItunesUrl = Post.Attribution.itunes_url;
-                    Attribution.Name = Post.Attribution.name;
+                    Attribution.Website = Post.attribution.website;
+                    Attribution.ItunesUrl = Post.attribution.itunes_url;
+                    Attribution.Name = Post.attribution.name;
                     Feed.Attribution = Attribution;
                 }
 

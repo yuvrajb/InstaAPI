@@ -434,7 +434,7 @@ namespace InstaAPI.Endpoints.Authenticated
                 BaseUri.Path = "users/" + UserId + "/relationship";
 
                 // SET UP QUERY String
-                NameValueCollection PostStrings = new NameValueCollection();
+                NameValueCollection PostStrings = System.Web.HttpUtility.ParseQueryString(String.Empty);
                 PostStrings.Add("access_token", AuthorisedUser.AccessToken);
                 PostStrings.Add("action", Type.ToString());
 

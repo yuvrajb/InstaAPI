@@ -64,6 +64,9 @@ namespace InstaAPI.Endpoints.Unauthenticated
                 // SET THE QUERY STRINGS
                 BaseUri.Query = QueryString.ToString();
 
+                // CREATE NEW FEEDS OBJECT AND FILL IN DATA
+                UserPosts = new Feeds();
+
                 // SEND REQUEST 
                 WebClient Client = new WebClient();
                 byte[] ResponseData = Client.DownloadData(BaseUri.Uri);
@@ -71,9 +74,6 @@ namespace InstaAPI.Endpoints.Unauthenticated
 
                 // PARSE JSON
                 dynamic ParsedJson = JsonConvert.DeserializeObject(Response);
-
-                // CREATE NEW FEEDS OBJECT AND FILL IN DATA
-                UserPosts = new Feeds();
 
                 // CREATE META OBJECT
                 MetaData Meta = new MetaData();

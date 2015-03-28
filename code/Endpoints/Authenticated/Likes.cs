@@ -138,7 +138,7 @@ namespace InstaAPI.Endpoints.Authenticated
                 BaseUri.Path = "media/" + MediaId + "/likes";
 
                 // SET UP QUERY String
-                NameValueCollection PostStrings = new NameValueCollection();
+                NameValueCollection PostStrings = System.Web.HttpUtility.ParseQueryString(String.Empty);
                 PostStrings.Add("access_token", AuthorisedUser.AccessToken);
 
                 // CREATE NEW USER FOLLOWS OBJECT

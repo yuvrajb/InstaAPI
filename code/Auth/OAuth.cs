@@ -48,7 +48,7 @@ namespace InstaAPI.Auth
             {
                 WebClient Client = new WebClient();
                 UriBuilder AuthenticationTokenRequestUri = new UriBuilder();
-                NameValueCollection PostStrings = new NameValueCollection();
+                NameValueCollection PostStrings = System.Web.HttpUtility.ParseQueryString(String.Empty);
 
                 // SET THE POST VALUES
                 PostStrings.Add("client_id", this.Config.GetClientId());

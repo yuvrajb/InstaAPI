@@ -143,7 +143,7 @@ namespace InstaAPI.Endpoints.Authenticated
                 BaseUri.Path = "media/" + MediaId + "/comments";
 
                 // SET UP QUERY String
-                NameValueCollection PostStrings = new NameValueCollection();
+                NameValueCollection PostStrings = System.Web.HttpUtility.ParseQueryString(String.Empty);
                 PostStrings.Add("access_token", AuthorisedUser.AccessToken);
                 PostStrings.Add("text", Text);
 
