@@ -10,7 +10,7 @@ The API may contain some bugs; feel free to raise issues regarding the same. You
 </ul>
 Yuvraj Singh Babrah, 2015
 # Important
-In order to post or delete something on Instagram using any API, you first need to get your application approved from Instagram. In case if you try to mention anything besides basic in your scopes you'll encounter an error on the authentication page. [More on this: https://help.instagram.com/contact/185819881608116]
+In order to post or delete something on Instagram using any API, you first need to get your application approved from Instagram. In case if you try to mention anything besides basic in your scopes you'll encounter an error on the authentication page. More on this: [Instagram Contact](https://help.instagram.com/contact/185819881608116)
 
 You won't face any hiccup while fetching any type of data; be it media, likes or comment.
 # Requirements
