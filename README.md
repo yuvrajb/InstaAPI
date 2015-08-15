@@ -9,6 +9,10 @@ The API may contain some bugs; feel free to raise issues regarding the same. You
 	<li>twitter: <b>@yuvrajb</b></li>
 </ul>
 Yuvraj Singh Babrah, 2015
+# Important
+In order to post or delete something on Instagram using any API, you first need to get your application approved from Instagram. In case if you try to mention anything besides basic in your scopes you'll encounter an error on the authentication page. [More on this: https://help.instagram.com/contact/185819881608116]
+
+You won't face any hiccup while fetching any type of data; be it media, likes or comment.
 # Requirements
 <ul>
 	<li>DotNet Framework 4 or above</li>
@@ -35,10 +39,12 @@ Yuvraj Singh Babrah, 2015
   Console.WriteLine(user.UserName);
   Console.WriteLine(user.FullName);
   ```
+  <b>You can serialize and save the AuthUser object. This is how you can save the access for the authorized user and there will be no need to authorize the application again and again.</b>
   
   - <b>Fetching User Feeds</b>
   ```
-  Feeds feeds = users.GetUserPosts("1118571892", new GetUserPostsParameters());
+  Users CurrentUser = new Users(config, user);
+  Feeds feeds = CurrentUser.GetUserPosts("1118571892", new GetUserPostsParameters());
   foreach (var fd in feeds.Data)
   {
       Console.WriteLine(fd.Caption.Text);
