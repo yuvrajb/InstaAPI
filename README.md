@@ -39,7 +39,7 @@ You won't face any hiccup while fetching any type of data; be it media, likes or
   Console.WriteLine(user.UserName);
   Console.WriteLine(user.FullName);
   ```
-  <b>You can serialize and save the AuthUser object. This is how you can save the access for the authorized user and there will be no need to authorize the application again and again.</b>
+  <b>You can serialize and save the AuthUser object. This is how you can save the access for the authorized user; hence, there will be no need to authorize the application.</b>
   
   - <b>Fetching User Feeds</b>
   ```
